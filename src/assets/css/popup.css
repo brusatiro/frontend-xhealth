@@ -1,0 +1,42 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo azul escuro com transparência */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para garantir que o pop-up apareça acima de outros elementos */
+  }
+  
+  .popup-content {
+    background-color: #041D33; /* Fundo branco */
+    padding: 20px;
+    padding-left: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.336); /* Borda branca com sombra */
+    position: relative;
+    margin-right: 20px !important;
+    width: 55%;
+  }
+  
+  .close-button  {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    background-color: white !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 0.9rem !important;
+    margin-left: 20px !important;
+    padding: 10px 12px !important;
+  }
+  
+  .close-button:focus {
+    outline: none;
+  }
+  
+  /* Outros estilos do pop-up, como fontes e tamanho de texto, podem ser adicionados conforme necessário */
+  

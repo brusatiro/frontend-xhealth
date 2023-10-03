@@ -8,11 +8,17 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Header from './header';
 import Footer from './footer';
 import { Link } from 'react-router-dom';
+import Popup from './popup';
 
 const PatientSearch = () => {
+  
   const [patientId, setPatientId] = useState('');
   const [patientData, setPatientData] = useState(null);
   const [error, setError] = useState(null);
+  const [showPopup, setShowPopup] = useState(false); // Estado para controlar a exibição do pop-up
+  const [popupMessage, setPopupMessage] = useState(''); // Mensagem a ser exibida no pop-up
+
+
   const [formData, setFormData] = useState({
     // Adicione os campos do formulário aqui
     fullName: '',
@@ -42,6 +48,10 @@ const PatientSearch = () => {
       const response = await axios.post('http://localhost:8080/patients', formData);
       // Aqui você pode tratar a resposta, como exibir uma mensagem de sucesso
       console.log('Paciente cadastrado com sucesso:', response.data);
+
+      setPopupMessage('Paciente cadastrado com sucesso: ' + response.data.patientId);
+      setShowPopup(true);
+
       // Também pode limpar o formulário após o cadastro
       setFormData({
         fullName: '',
@@ -54,6 +64,11 @@ const PatientSearch = () => {
       console.error('Erro ao cadastrar paciente:', error);
       // Trate os erros de acordo com sua necessidade, exibindo uma mensagem de erro, por exemplo.
     }
+  };
+
+  const closePopup = () => {
+    // Função para fechar o pop-up
+    setShowPopup(false);
   };
 
   // Função para lidar com as mudanças nos campos do formulário
@@ -104,6 +119,10 @@ const PatientSearch = () => {
   </div>
 )}
 
+{showPopup && (
+        <Popup message={popupMessage} onClose={closePopup} />
+      )}
+
         </div>
         <p>ou</p>
         <div className='searchInputs'>
@@ -153,10 +172,10 @@ const PatientSearch = () => {
                 />
               </div>
               <div>
-                <label>CEP</label>
+                <label>Endereço</label>
                 <input
                   type="text"
-                  placeholder="EX: 534 Erewhon St PeasantVille, Rainbow, Vic 3999"
+                  placeholder="EX: Av. Paulista, Bela Vista, Nr 1000"
                   name="address"
                   value={formData.address}
                   onChange={handleInputChange}
@@ -168,7 +187,7 @@ const PatientSearch = () => {
               <label htmlFor="Checkbox">Eu concordo com os termos e condições</label>
             </div>
             {/* <button type="submit">Cadastrar</button> */}
-            <button onClick={createPatient}>Cadastrar</button>
+            <button className='buttonCadastrar' onClick={createPatient}>Cadastrar</button>
           </form>
         </div>
       </div>
@@ -192,38 +211,28 @@ export default PatientSearch;
 
 
 
-
-
-
-
-
-
-
-
-
 // import React, { useState } from 'react';
 // import axios from 'axios';
-// import '../assets/css/reset.css'
-// import '../assets/css/style.css'
-// import '../assets/css/searchPatient.css'
+// import '../assets/css/reset.css';
+// import '../assets/css/style.css';
+// import '../assets/css/searchPatient.css';
 // import DatePicker from 'react-datepicker';
 // import 'react-datepicker/dist/react-datepicker.css';
 // import Header from './header';
 // import Footer from './footer';
 // import { Link } from 'react-router-dom';
 
-
 // const PatientSearch = () => {
 //   const [patientId, setPatientId] = useState('');
 //   const [patientData, setPatientData] = useState(null);
 //   const [error, setError] = useState(null);
-//   const [selectedDate, setSelectedDate] = useState(null);
 //   const [formData, setFormData] = useState({
+//     // Adicione os campos do formulário aqui
 //     fullName: '',
 //     birthDate: '',
 //     gender: '',
 //     phone: '',
-//     postalCode: '',
+//     address: '',
 //   });
 
 //   const fetchPatientInfo = async () => {
@@ -238,35 +247,60 @@ export default PatientSearch;
 //     }
 //   };
 
-//   const handleDateChange = (date) => {
-//     setSelectedDate(date);
-//   };
 
+//   // Função para enviar os dados do paciente para o servidor
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
 //       const response = await axios.post('http://localhost:8080/patients', formData);
+//       // Aqui você pode tratar a resposta, como exibir uma mensagem de sucesso
 //       console.log('Paciente cadastrado com sucesso:', response.data);
-    
+//       // Também pode limpar o formulário após o cadastro
 //       setFormData({
 //         fullName: '',
 //         birthDate: '',
 //         gender: '',
 //         phone: '',
-//         postalCode: '',
+//         address: '',
 //       });
 //     } catch (error) {
 //       console.error('Erro ao cadastrar paciente:', error);
+//       // Trate os erros de acordo com sua necessidade, exibindo uma mensagem de erro, por exemplo.
 //     }
 //   };
 
-//   const handleInputChange = (e) => {
+//   const createPatient = async () => {
+//     try {
+//         const response = await axios.post('http://localhost:8080/patients', {
+//             fullName: formData.fullName, // Certifique-se de que formData.fullName seja passado corretamente aqui
+//             birthDate: formData.birthDate,
+//             gender: formData.gender,
+//             phone: formData.phone,
+//             address: formData.address,
+//         });
+//         console.log('Paciente cadastrado com sucesso:', response.data);
+//         setFormData({
+//             fullName: '', // Limpe o formulário após o cadastro
+//             birthDate: '',
+//             gender: '',
+//             phone: '',
+//             address: '',
+//         });
+//     } catch (error) {
+//         console.error('Erro ao cadastrar paciente:', error);
+//         // Trate os erros de acordo com sua necessidade
+//     }
+// };
+
+// const handleInputChange = (e) => {
 //     const { name, value } = e.target;
 //     setFormData({
-//       ...formData,
-//       [name]: value,
+//         ...formData,
+//         [name]: value,
 //     });
-//   };
+// };
+
+
 
 //   return (
 //     <div>
@@ -274,7 +308,6 @@ export default PatientSearch;
 //         <Header />
 //       </div>
 //       <div className='patientContent'>
-
 //         <h2>Dados do Paciente</h2>
 //         <div className='searchById'>
 //           <h3>Buscar por ID do paciente</h3>
@@ -286,104 +319,87 @@ export default PatientSearch;
 //           />
 //           <button onClick={fetchPatientInfo}>Buscar</button>
 //           {error && <p style={{ color: 'red' }}>{error}</p>}
-//           {patientData && (
-//             <div className='infoPatient'>
-//               {/* <h3>Informações do Paciente</h3> */}
-//               <p><span>ID:</span> {patientData.id}</p>
-//               <p><span>Nome:</span> {patientData.name[0].given.join(' ')} {patientData.name[0].family} </p>
-//               <p><span>Gênero:</span> {patientData.gender}</p>
-//               <p><span>Data de Nascimento:</span> {patientData.birthDate}</p>
-//               <p><span>Endereço:</span> {patientData.address[0].text}</p>
-//             </div>
-//           )}
+//           {patientData && patientData.name && (
+//   <div className='infoPatient'>
+//     <p><span>ID:</span> {patientData.id}</p>
+//     <p><span>Nome:</span> {patientData.name[0].given.join(' ')} {patientData.name[0].family} </p>
+//     <p><span>Gênero:</span> {patientData.gender}</p>
+//     <p><span>Data de Nascimento:</span> {patientData.birthDate}</p>
+//     <p><span>Endereço:</span> {patientData.address[0].text}</p>
+//   </div>
+// )}
+
 //         </div>
 //         <p>ou</p>
 //         <div className='searchInputs'>
 //           <h3>Cadastrar Paciente</h3>
-//           {/* <form onSubmit={handleSubmit}> */}
-//         <div className='infoCadastroPatient'>
-//                         <div>
-//                             <label>Nome Completo</label>
-//                             <input
-//                                 type="text"
-//                                 placeholder="EX: Kayke Guedes"
-//                                 name="fullName"
-//                                 value={formData.fullName}
-//                                 onChange={handleInputChange}
-//                             />
-//                         </div>
-//                         {/* <div>
-//                             <label>CPF:</label>
-//                             <input
-//                                 type="text"
-//                                 placeholder="EX: 503.356.368-88"
-//                             />
-//                         </div> */}
-//                         <div>
-//                             <label>Data de Nascimento:</label>
-//                             <input
-//                                 type="text"
-//                                 placeholder="EX: 28/03/2003"
-//                                 name="birthDate"
-//                                 value={formData.birthDate}
-//                                 onChange={handleInputChange}
-//                             />
-//                             {/* <div className='datePicker'>
-//                             <DatePicker 
-//                             selected={selectedDate}
-//                             onChange={handleDateChange}
-//                             placeholderText="EX: 28/03/2023"
-//                             />
-//                           </div> */}
-//                         </div>
-                          
-//                     </div>
-//         <div className='infoCadastroPatient'>
-//                         <div>
-//                             <label>Gênero</label>
-//                             <input
-//                                 type="text"
-//                                 placeholder="EX: Masculino"
-//                                 name="gender"
-//                                 value={formData.gender}
-//                                 onChange={handleInputChange}
-//                             />
-//                         </div>
-//                         <div>
-//                               <label>Telefone</label>
-//                               <input
-//                                   type="text"
-//                                   placeholder="EX: (11) 99565-7868"
-//                                   name="phone"
-//                                   value={formData.phone}
-//                                   onChange={handleInputChange}
-//                               />
-//                         </div>
-//                         <div>
-//                             <label>CEP:</label>
-//                             <input
-//                                 type="text"
-//                                 placeholder="EX: 06327-010"
-//                                 name="postalCode"
-//                                 value={formData.postalCode}
-//                                 onChange={handleInputChange}
-//                             />
-//                         </div>
-//                     </div>
+//           <form onSubmit={handleSubmit}>
+//             <div className='infoCadastroPatient'>
+//               <div>
+//                 <label>Nome Completo</label>
+//                 <input
+//                   type="text"
+//                   placeholder="EX: Kayke Guedes"
+//                   name="fullName"
+//                   value={formData.fullName}
+//                   onChange={handleInputChange}
+//                 />
+//               </div>
+//               <div>
+//                 <label>Data de Nascimento</label>
+//                 <input
+//                   type="text"
+//                   placeholder="EX: 28/03/2003"
+//                   name="birthDate"
+//                   value={formData.birthDate}
+//                   onChange={handleInputChange}
+//                 />
+//               </div>
+//               <div>
+//                 <label>Gênero</label>
+//                 <input
+//                   type="text"
+//                   placeholder="EX: Masculino"
+//                   name="gender"
+//                   value={formData.gender}
+//                   onChange={handleInputChange}
+//                 />
+//               </div>
+//             </div>
+//             <div className='infoCadastroPatient'>
+//               <div>
+//                 <label>Telefone</label>
+//                 <input
+//                   type="text"
+//                   placeholder="EX: (11) 99565-7868"
+//                   name="phone"
+//                   value={formData.phone}
+//                   onChange={handleInputChange}
+//                 />
+//               </div>
+//               <div>
+//                 <label>CEP</label>
+//                 <input
+//                   type="text"
+//                   placeholder="EX: 534 Erewhon St PeasantVille, Rainbow, Vic 3999"
+//                   name="address"
+//                   value={formData.address}
+//                   onChange={handleInputChange}
+//                 />
+//               </div>
+//             </div>
+//             <div>
+//               <input type="checkbox" id="Checkbox" name="Checkbox" required />
+//               <label htmlFor="Checkbox">Eu concordo com os termos e condições</label>
+//             </div>
+//             {/* <button type="submit">Cadastrar</button> */}
+//             <button className='buttonCadastrar' onClick={createPatient}>Cadastrar</button>
+//           </form>
 //         </div>
-//         <div>
-//                         <input type="checkbox" id="Checkbox" name="Checkbox" required />
-//                         <label htmlFor="Checkbox">Eu concordo com os termos e condições</label>
-//                     </div>
-//                     <button type='submit'>Cadastrar</button>
-//                           {/* </form> */}
-
-//       {/* </div> */}
-// </div>
+//       </div>
 //       <div className='buttonContinuar'>
-//       <Link to="/attach"><button>Continuar</button></Link>
-//                     </div>
-
+//         <Link to="/attach"><button>Continuar</button></Link>
+//       </div>
 //       <div>
 //         <Footer />
 //       </div>
@@ -392,6 +408,25 @@ export default PatientSearch;
 // };
 
 // export default PatientSearch;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
