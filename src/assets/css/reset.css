@@ -1,0 +1,33 @@
+/* reset.css (ou reset.css) */
+
+/* Zerando margens e preenchimentos padrão */
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, em, img, small, strong, sub, sup, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: normal;
+    vertical-align: baseline;
+  }
+  
+  /* Estabelecendo fonte base para uma melhor consistência de fonte */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Removendo decoração de links */
+  a {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do texto do elemento pai */
+  }
+  
+  /* Definindo a caixa de modelo para todos os elementos */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Tornando elementos de lista de itens não marcados (ul, ol) sem pontos de lista */
+  ul, ol {
+    list-style: none;
+  }
+  

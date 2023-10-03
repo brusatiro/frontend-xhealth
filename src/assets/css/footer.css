@@ -1,0 +1,26 @@
+footer {
+    background-color: #041D33;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 10px;
+    min-height: 30vh;
+  }
+
+footer img {
+    width: 60%;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.links {
+    display: flex;
+}
+
+.links p {
+    margin: 10px 10px;
+    cursor: pointer;
+}

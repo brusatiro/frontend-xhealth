@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500;700;800;900;1000&display=swap');
+
+.patientContent {
+  background-color: #041D33;
+  color: white;
+  margin: 40px 40px 0;
+  min-height: 80vh;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.patientContent h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.searchById {
+  padding: 30px;
+}
+
+.searchById h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.searchById input[type="text"] {
+  width: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: 'Alegreya SC', serif;
+  margin: 0 10px;
+}
+
+.searchById button {
+  background-color: white;
+  color: #041D33;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Alegreya SC', serif;
+  font-size: 1rem;
+  margin: 0 10px;
+}
+
+.searchById input:focus {
+  outline: none;
+  box-shadow: 3px 3px 10px #000000;
+}
+
+
+/* Estilize a mensagem de erro em vermelho */
+p.error {
+  color: white;
+}
+
+/* Estilize as informações do paciente */
+.infoPatient {
+  margin-top: 10px;
+  padding: 20px 30px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: start;
+}
+
+/* Estilize os parágrafos das informações do paciente */
+.infoPatient p {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+span {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.searchInputs {
+  margin-top: 20px;
+  width: 75%;
+}
+
+.searchInputs h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.infoCadastroPatient {
+  display: flex;
+  margin: 20px 0;
+}
+
+.infoCadastroPatient div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 10px;
+  align-items: start;
+}
+
+.infoCadastroPatient label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.infoCadastroPatient input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.infoCadastroPatient input:focus {
+  outline: none;
+  box-shadow: 3px 3px 10px #000000;
+}
+
+input::placeholder {
+  font-family: 'Alegreya SC', serif;
+  color: #9c9c9c;
+  font-size: 0.9rem;
+}
+
+.buttonContinuar {
+  text-align: center;
+}
+
+.buttonContinuar button {
+  background-color: #041D33;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  font-family: 'Alegreya SC', serif;
+  font-size: 1.3rem;
+  margin: 30px 10px;
+}
+
+.datePicker {
+  width: 400px;
+}
