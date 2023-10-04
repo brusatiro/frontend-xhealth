@@ -32,6 +32,7 @@
     font-size: 0.9rem !important;
     margin-left: 20px !important;
     padding: 10px 12px !important;
+    border-radius: 6px;
   }
   
   .close-button:focus {

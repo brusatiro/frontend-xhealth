@@ -65,7 +65,7 @@ p.error {
 
 /* Estilize as informações do paciente */
 .infoPatient {
-  margin-top: 10px;
+  margin-top: 30px;
   padding: 20px 30px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -163,6 +163,21 @@ input::placeholder {
   margin: 30px 10px;
 }
 
-.datePicker {
-  width: 400px;
+select {
+  border: none;
+  padding: 11px;
+  background-color: #f0f0f0; 
+  color: #333; 
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+select::-ms-expand {
+  display: none; 
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: 3px 3px 10px #000000;
 }
