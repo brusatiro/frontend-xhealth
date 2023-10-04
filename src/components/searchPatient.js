@@ -132,7 +132,7 @@ const PatientSearch = () => {
           <h3>Cadastrar Paciente</h3>
           <form onSubmit={handleSubmit}>
             <div className='infoCadastroPatient'>
-              <div>
+              <div className='nome'>
                 <label>Nome Completo</label>
                 <input
                   type="text"

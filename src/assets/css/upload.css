@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@400;500;700;800;900;1000&display=swap');
 
-.inicialContent {
-    background-image: url('../img/backgroundDark.png');
+.inicialContentUpload {
+    background-image: url('../img/backgroundBlue.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

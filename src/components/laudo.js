@@ -16,7 +16,7 @@ const Laudo = () => {
             <div>
                 <Header />
             </div>
-            <div className="inicialContent">
+            <div className="inicialContentLaudo">
                 <div className='textContentLaudo'>
                     <h1>Laudo pronto!</h1>
                     <img src={laudo} alt="Imagem de exemplo de um laudo" />

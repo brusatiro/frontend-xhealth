@@ -17,7 +17,7 @@ const Upload = () => {
             <div>
                 <Header />
             </div>
-            <div className="inicialContent">
+            <div className="inicialContentUpload">
                 <div className='textContentUpload'>
                     <h1>Seus dados foram enviados com sucesso!</h1>
                     <h3>Aguarde um instante para receber o Laudo</h3>
