@@ -83,7 +83,7 @@ const PatientSearch = () => {
 
   const createPatient = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/patients', formData);
+      const response = await axios.post('https://backend-xhealth.vercel.app/patients', formData);
       setPatientData(response.data);
       setError(null); // Limpa qualquer erro anterior
     } catch (error) {
