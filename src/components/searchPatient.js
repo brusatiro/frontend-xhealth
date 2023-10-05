@@ -25,7 +25,7 @@ const PatientSearch = () => {
 
   const fetchPatientInfo = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/patients/${patientId}`);
+      const response = await axios.get(`https://backend-xhealth.vercel.app/patients/${patientId}`);
       setPatientData(response.data);
       setError(null); // Limpa qualquer erro anterior
     } catch (error) {
