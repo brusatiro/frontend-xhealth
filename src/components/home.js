@@ -19,7 +19,7 @@ function Home() {
 
       <div className="inicialContent">
         <div className='textContent'>
-          <h1>O seu Laudo em 1 minuto</h1>
+          <h1>Laudo em 1 minuto!</h1>
           <p>Uma análise feita por nossa IA capaz de interpretar milhares de exames de imagem por segundo e trazer o laudo exato para seu especialista.</p>
           <Link to="/login"><button>Quero utilizar</button></Link>
         </div>

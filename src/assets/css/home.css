@@ -7,7 +7,7 @@ body {
 }  
 
 .inicialContent {
-    background-image: url('../img/background.png');
+    background-image: url('../img/backgroundDark.png');
     background-size: cover; /* Ajuste ao tamanho desejado, como 'cover' ou 'contain' */
     background-position: center; /* Posicione a imagem ao centro */
     background-repeat: no-repeat; /* Não repita a imagem */

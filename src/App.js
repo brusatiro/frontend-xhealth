@@ -6,6 +6,7 @@ import Login from './components/login';
 import Upload from './components/upload';
 import Attach from './components/attach';
 import Laudo from './components/laudo';
+import Approval from './components/approval';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/attach" element={<Attach />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/laudo" element={<Laudo />} />
+        <Route path="/approval" element={<Approval />} />
       </Routes>
     </Router>
   );

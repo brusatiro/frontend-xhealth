@@ -5,7 +5,7 @@
     color: white;
     margin: 40px 40px 0;
     min-height: 70vh;
-    padding: 40px 20px;
+    padding: 40px 20px 30px;
     text-align: center;
     border-radius: 8px;
 }
@@ -15,36 +15,35 @@
     font-weight: 500;
   }
 
-.divAttach {
-    background-color: white;
+.divApproval {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #041D33;
-    padding: 30px 60px;
+    padding: 0px 60px;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.divAttach img {
-    width: 40px;
+.divApproval img {
+    /* width: 40px; */
     margin-top: 10px;
 }
 
-.attach {
+.approval {
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.attach h3 {
+.approval h3 {
     font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.divAttach button {
+.divApproval button {
     background-color: #041D33;
     color: white;
     border: none;
@@ -59,8 +58,39 @@
     margin: 10px 10px;
 }
 
-.divAttach p {
+.divApproval p {
+    color: white;
     margin: 10px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.3rem;
 }
+
+.divMedico {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.divMedico label, .divCheckbox label {
+    color: white;
+    margin: 10px 0;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.divMedico input {
+    padding: 10px 12px;
+    font-weight: 400;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 400px;
+}
+
+.divCheckbox {
+    margin-top: 30px;
+}
+
+.divCheckbox label{
+    margin-left: 10px;
+}
+

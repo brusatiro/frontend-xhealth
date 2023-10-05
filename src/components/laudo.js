@@ -7,6 +7,7 @@ import iconDownload from '../assets/img/iconDownload.svg';
 import laudo from '../assets/img/laudo.svg';
 import Header from './header';
 import Footer from './footer';
+import { Link } from 'react-router-dom';
 
 
 const Laudo = () => {
@@ -25,6 +26,7 @@ const Laudo = () => {
                         <img src={iconDownload} alt="Ícone para representar um Download" />
                         <p>Baixar Laudo</p>
                     </div>
+                    <Link to="/approval"><button>Enviar para aprovação</button></Link>
                 </div>
             </div>
 

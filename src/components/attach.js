@@ -33,9 +33,9 @@ const Attach = () => {
       </div>
       <div className='attachContent'>
 
-        <h2>Anexar Raio-X</h2>
+        <h2>Anexar Exame</h2>
         <div className='attach'>
-          <h3>Coloque o Raio-X a ser analisado em um PDF e faça o anexo abaixo:</h3>
+          <h3>Coloque o exame de imagem a ser analisado em um PNG ou JPG e faça o anexo abaixo:</h3>
 
           <div className='divAttach'>
             <img src={iconUpload} alt="Ícone para representar um Upload" />
@@ -58,7 +58,7 @@ const Attach = () => {
       </div>
 
       <div className='buttonContinuar'>
-      <Link to="/upload"><button>Enviar Raio-X para IA</button></Link>
+      <Link to="/upload"><button>Enviar dados para IA</button></Link>
       </div>
 
       <div>
