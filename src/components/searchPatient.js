@@ -43,7 +43,7 @@ const PatientSearch = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/patients', formData);
+      const response = await axios.post('https://backend-xhealth.vercel.app/patients', formData);
       // Aqui você pode tratar a resposta, como exibir uma mensagem de sucesso
       console.log('Paciente cadastrado com sucesso:', response.data);
 
