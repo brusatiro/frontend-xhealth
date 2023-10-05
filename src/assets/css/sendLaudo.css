@@ -1,0 +1,62 @@
+.confirmData {
+    width: 75%;
+}
+.confirmData h3{
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.informData h3{
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.confirmDataPatient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+.confirmDataPatient div {
+    margin: 20px 20px;
+}
+
+.endereco {
+    padding-left: 40px;
+}
+
+.confirmDataPatient2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+.confirmDataPatient2 div {
+    margin: 20px 20px;
+}
+
+.informData {
+    width: 75%;
+}
+
+.informDataResp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: start;
+}
+
+.informDataResp div {
+    display: flex;
+    flex-direction: column;
+}
+
+.informDataResp input {
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 12px;
+}

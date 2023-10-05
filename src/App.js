@@ -7,6 +7,8 @@ import Upload from './components/upload';
 import Attach from './components/attach';
 import Laudo from './components/laudo';
 import Approval from './components/approval';
+import Send from './components/sendLaudo';
+import Success from './components/sentSuccess';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/upload" element={<Upload />} />
         <Route path="/laudo" element={<Laudo />} />
         <Route path="/approval" element={<Approval />} />
+        <Route path="/sendLaudo" element={<Send />} />
+        <Route path="/sentSuccess" element={<Success />} />
       </Routes>
     </Router>
   );

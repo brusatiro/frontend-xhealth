@@ -59,7 +59,7 @@ const Approval = () => {
             </div>
 
             <div className='buttonContinuar'>
-                <Link to=""><button>Enviar para o paciente</button></Link>
+                <Link to="/sendLaudo"><button>Confirmar dados do paciente</button></Link>
             </div>
 
             <div>
